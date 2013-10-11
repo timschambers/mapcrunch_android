@@ -7,20 +7,13 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends Activity {
+public class SettingsActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        final Button button = (Button) findViewById(R.id.btnSettings);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                Intent intSettings = new Intent(MainActivity.this, SettingsActivity.class);
-                MainActivity.this.startActivity(intSettings);
-            }
-        });
+        setContentView(R.layout.activity_settings);
+        setTitle("Settings");
     }
 
     @Override
@@ -29,5 +22,5 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
+
 }

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MapCrunch</string>
+    <string name="app_name">scoutt</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="strStart">Start</string>
+    <string name="strRankings">Rankings</string>
+    <string name="strSettings">Settings</string>
 
 </resources>

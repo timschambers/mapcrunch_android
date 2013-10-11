@@ -8,9 +8,28 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strStart"
+            android:id="@+id/btnStart"
+            android:layout_marginTop="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strRankings"
+            android:id="@+id/btnRankings"
+            android:layout_below="@+id/btnStart"
+            android:layout_centerHorizontal="true"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strSettings"
+            android:id="@+id/btnSettings"
+            android:layout_below="@+id/btnRankings"
+            android:layout_centerHorizontal="true"/>
 </RelativeLayout>

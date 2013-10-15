@@ -14,11 +14,19 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Button button = (Button) findViewById(R.id.btnSettings);
-        button.setOnClickListener(new View.OnClickListener() {
+        final Button btnSettings = (Button) findViewById(R.id.btnSettings);
+        btnSettings.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 Intent intSettings = new Intent(MainActivity.this, SettingsActivity.class);
                 MainActivity.this.startActivity(intSettings);
+            }
+        });
+
+        final Button btnRankings = (Button) findViewById(R.id.btnRankings);
+        btnRankings.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intRankings = new Intent(MainActivity.this, RankingsActivity.class);
+                MainActivity.this.startActivity(intRankings);
             }
         });
     }

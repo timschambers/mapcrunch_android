@@ -8,19 +8,21 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 // here's our beautiful adapter
 public class RankingArrayAdapter extends ArrayAdapter<Ranking> {
 
     Context mContext;
     int layoutResourceId;
-    Ranking[] r;
+    private static ArrayList<Ranking> rankings = new ArrayList<Ranking>();
 
-    public RankingArrayAdapter(Context mContext, int layoutResourceId, Ranking[] r) {
+    public RankingArrayAdapter(Context mContext, int layoutResourceId, ArrayList<Ranking> r) {
         super(mContext, layoutResourceId, r);
 
         this.layoutResourceId = layoutResourceId;
         this.mContext = mContext;
-        this.r = r;
+        this.rankings = r;
     }
 
     @Override
@@ -32,7 +34,7 @@ public class RankingArrayAdapter extends ArrayAdapter<Ranking> {
         }
 
         // object item based on the position
-        Ranking rank = r[position];
+        Ranking rank = rankings.get(position);
 
         // get the TextView and then set the text (item name) and tag (item ID) values
         TextView textViewItem = (TextView) convertView.findViewById(R.id.textViewItem);

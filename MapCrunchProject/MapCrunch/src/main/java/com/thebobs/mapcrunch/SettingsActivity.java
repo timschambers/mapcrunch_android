@@ -1,26 +1,56 @@
 package com.thebobs.mapcrunch;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
-import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
+import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 
-public class SettingsActivity extends Activity {
+import java.util.List;
 
+public class SettingsActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
-        setTitle("Settings");
     }
 
+    /**
+     * Populate the activity with the top-level headers.
+     */
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    public void onBuildHeaders(List<Header> target) {
+        loadHeadersFromResource(R.xml.preference_headers, target);
     }
 
+    /**
+     * This fragment shows the preferences for the first header (basic settings)
+     */
+    public static class BasicSettingsFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            //TODO: May need to set default value at some point - this is how it's done
+            //PreferenceManager.setDefaultValues(getActivity(),
+            //        R.xml.advanced_preferences, false);
+
+            addPreferencesFromResource(R.xml.basic_settings);
+        }
+    }
+
+    /**
+     * This fragment shows the preferences for the second header (advanced settings)
+     */
+    public static class AdvSettingsFragment extends PreferenceFragment {
+        @Override
+        public void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+
+            //TODO: May need to set default value at some point - this is how it's done
+            //PreferenceManager.setDefaultValues(getActivity(),
+            //        R.xml.advanced_settings, false);
+
+            // Load the preferences from an XML resource
+            addPreferencesFromResource(R.xml.advanced_settings);
+        }
+    }
 }

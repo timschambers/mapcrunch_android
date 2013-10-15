@@ -11,7 +11,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strStart"
+            android:text="@string/MainMenuStart"
             android:id="@+id/btnStart"
             android:layout_marginTop="55dp"
             android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strRankings"
+            android:text="@string/mainMenuRankings"
             android:id="@+id/btnRankings"
             android:layout_below="@+id/btnStart"
             android:layout_centerHorizontal="true"/>
@@ -28,8 +28,19 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/strSettings"
+            android:text="@string/MainMenuSettings"
             android:id="@+id/btnSettings"
             android:layout_below="@+id/btnRankings"
             android:layout_centerHorizontal="true"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="App Banner Logo Goes Here"
+            android:id="@+id/textView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"/>
+
 </RelativeLayout>

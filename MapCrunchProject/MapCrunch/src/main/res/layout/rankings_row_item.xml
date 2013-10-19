@@ -4,11 +4,25 @@
                 android:padding="10dp" >
 
     <TextView
-            android:id="@+id/rankingName"
+            android:id="@+id/rankingPlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:textSize="15dp"
+            android:textColor="#A13222"
+            android:textStyle="bold"
+            android:text="Place"
+            android:background="#EED8B3"
+            />
+
+
+    <TextView
+            android:id="@+id/rankingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/rankingPlace"
+            android:textSize="15dp"
+            android:paddingLeft="15dp"
             android:textColor="#A13222"
             android:text="Name"
             />

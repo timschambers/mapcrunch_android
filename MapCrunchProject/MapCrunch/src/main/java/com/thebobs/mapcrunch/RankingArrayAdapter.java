@@ -27,13 +27,19 @@ public class RankingArrayAdapter extends ArrayAdapter<Ranking> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        Ranking current = rankings.get(position);
+
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.rankings_row_item, parent, false);
         TextView txtvwName = (TextView) rowView.findViewById(R.id.rankingName);
-        txtvwName.setText(rankings.get(position).getName());
+        txtvwName.setText(current.getName());
+
         TextView txtvwScore = (TextView) rowView.findViewById(R.id.rankingValue);
-        txtvwScore.setText(Double.toString(rankings.get(position).getScore()));
+        txtvwScore.setText(Double.toString(current.getScore()));
+
+        TextView txtvwPlace = (TextView) rowView.findViewById(R.id.rankingPlace);
+        txtvwPlace.setText(Integer.toString(current.getPlace()));
 
         return rowView;
     }

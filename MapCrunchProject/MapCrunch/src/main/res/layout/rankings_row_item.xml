@@ -4,12 +4,20 @@
                 android:padding="10dp" >
 
     <TextView
-            android:id="@+id/textViewItem"
+            android:id="@+id/rankingName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:text="Name"
-            android:tag="Score"
             android:textSize="15dp" />
+
+    <TextView
+            android:id="@+id/rankingValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Score"
+            android:textSize="15dp"
+            android:layout_below="@+id/rankingName"
+            android:layout_alignLeft="@+id/rankingName"/>
 
 </RelativeLayout>

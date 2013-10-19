@@ -13,7 +13,7 @@ import java.util.ArrayList;
 // here's our beautiful adapter
 public class RankingArrayAdapter extends ArrayAdapter<Ranking> {
 
-    Context mContext;
+    private final Context mContext;
     int layoutResourceId;
     private static ArrayList<Ranking> rankings = new ArrayList<Ranking>();
 
@@ -27,22 +27,15 @@ public class RankingArrayAdapter extends ArrayAdapter<Ranking> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView==null){
-            // inflate the layout
-            LayoutInflater inflater = ((Activity) mContext).getLayoutInflater();
-            convertView = inflater.inflate(layoutResourceId, parent, false);
-        }
+        LayoutInflater inflater = (LayoutInflater) mContext
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View rowView = inflater.inflate(R.layout.rankings_row_item, parent, false);
+        TextView txtvwName = (TextView) rowView.findViewById(R.id.rankingName);
+        txtvwName.setText(rankings.get(position).getName());
+        TextView txtvwScore = (TextView) rowView.findViewById(R.id.rankingValue);
+        txtvwScore.setText(Double.toString(rankings.get(position).getScore()));
 
-        // object item based on the position
-        Ranking rank = rankings.get(position);
-
-        // get the TextView and then set the text (item name) and tag (item ID) values
-        TextView textViewItem = (TextView) convertView.findViewById(R.id.textViewItem);
-        textViewItem.setText(rank.getName());
-        textViewItem.setTag(rank.getScore());
-
-        return convertView;
-
+        return rowView;
     }
 
 }

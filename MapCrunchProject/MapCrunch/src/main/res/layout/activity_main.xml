@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EED8B3"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -15,6 +16,8 @@
             android:id="@+id/btnStart"
             android:layout_marginTop="55dp"
             android:layout_alignParentTop="true"
+            android:background="#EED8B3"
+            android:textColor="#A13222"
             android:layout_centerHorizontal="true"/>
 
     <Button
@@ -23,6 +26,8 @@
             android:text="@string/mainMenuRankings"
             android:id="@+id/btnRankings"
             android:layout_below="@+id/btnStart"
+            android:background="#EED8B3"
+            android:textColor="#A13222"
             android:layout_centerHorizontal="true"/>
 
     <Button
@@ -31,6 +36,8 @@
             android:text="@string/MainMenuSettings"
             android:id="@+id/btnSettings"
             android:layout_below="@+id/btnRankings"
+            android:background="#EED8B3"
+            android:textColor="#A13222"
             android:layout_centerHorizontal="true"/>
 
     <TextView

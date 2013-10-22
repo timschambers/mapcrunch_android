@@ -29,6 +29,14 @@ public class MainActivity extends Activity {
                 MainActivity.this.startActivity(intRankings);
             }
         });
+
+        final Button btnStart = (Button) findViewById(R.id.btnStart);
+        btnStart.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intMode = new Intent(MainActivity.this, ModeActivity.class);
+                MainActivity.this.startActivity(intMode);
+            }
+        });
     }
 
     @Override

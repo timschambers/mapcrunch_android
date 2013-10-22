@@ -44,8 +44,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="App Banner Logo Goes Here"
-            android:id="@+id/textView"
+            android:text="@string/MainTitle"
+            android:id="@+id/txtMainTitle"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"/>

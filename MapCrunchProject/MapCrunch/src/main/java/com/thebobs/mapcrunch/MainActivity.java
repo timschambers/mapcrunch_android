@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -17,15 +18,18 @@ public class MainActivity extends Activity {
 
         //Get typefaces from assets
         Typeface tfNevis = Typeface.createFromAsset(getAssets(), "fonts/nevis.ttf");
+        Typeface tfChunk = Typeface.createFromAsset(getAssets(), "fonts/Chunk.ttf");
 
         //Get buttons from view
         final Button btnStart = (Button) findViewById(R.id.btnStart);
         final Button btnSettings = (Button) findViewById(R.id.btnSettings);
         final Button btnRankings = (Button) findViewById(R.id.btnRankings);
+        final TextView txtMainTitle = (TextView) findViewById(R.id.txtMainTitle);
 
         btnStart.setTypeface(tfNevis);
         btnSettings.setTypeface(tfNevis);
         btnRankings.setTypeface(tfNevis);
+        txtMainTitle.setTypeface(tfChunk);
 
         //Set onclick listeners for all buttons
         btnSettings.setOnClickListener(new View.OnClickListener() {

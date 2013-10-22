@@ -24,6 +24,7 @@
         </activity>
         <activity android:name=".SettingsActivity"/>
         <activity android:name=".RankingsActivity"/>
+        <activity android:name=".ModeActivity"/>
     </application>
 
 </manifest>

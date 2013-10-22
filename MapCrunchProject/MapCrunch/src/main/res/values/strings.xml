@@ -12,9 +12,9 @@
     <string name="AdvSettingsTitle">Advanced settings</string>
     <string name="AdvSettingsSum">Nothing here</string>
     <string name="LangSelectSetting">Select a language</string>
+    <string name="ModeHeader">Select a game mode</string>
+    <string name="Mode1Selection">Choose destination</string>
+    <string name="Mode2Selection">Choose start location and destination</string>
 
-    <string name="ModeHeader">Choose to enter coordinates for:</string>
-    <string name="Mode1">Destination</string>
-    <string name="Mode2">Start and Destination</string>
 
 </resources>

@@ -50,4 +50,14 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ScoreTest"
+        android:id="@+id/btnInser"
+        android:background="#EED8B3"
+        android:textColor="#A13222"
+        android:layout_below="@+id/btnSettings"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>

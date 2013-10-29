@@ -22,9 +22,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SettingsActivity"/>
-        <activity android:name=".RankingsActivity"/>
-        <activity android:name=".ModeActivity"/>
+        <activity android:name="com.thebobs.mapcrunch.SettingsActivity" />
+        <activity android:name="com.thebobs.mapcrunch.RankingsActivity" />
+        <activity android:name="com.thebobs.mapcrunch.ModeActivity" />
+        <activity
+            android:name="com.thebobs.mapcrunch.ScorePromptActivity"
+            android:label="@string/title_activity_score_prompt" >
+        </activity>
     </application>
 
 </manifest>

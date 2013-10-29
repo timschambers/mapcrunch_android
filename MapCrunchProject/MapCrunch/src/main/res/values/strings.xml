@@ -16,6 +16,7 @@
     <string name="Mode1Selection">Choose destination</string>
     <string name="Mode2Selection">Choose start location and destination</string>
     <string name="MainTitle">Welcome to scoutt!</string>
-
+    <string name="title_activity_score_prompt">Hi Score!</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

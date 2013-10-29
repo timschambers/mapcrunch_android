@@ -26,6 +26,9 @@ public class MainActivity extends Activity {
         final Button btnRankings = (Button) findViewById(R.id.btnRankings);
         final TextView txtMainTitle = (TextView) findViewById(R.id.txtMainTitle);
 
+
+        final Button btnInser = (Button) findViewById(R.id.btnInser);
+
         btnStart.setTypeface(tfNevis);
         btnSettings.setTypeface(tfNevis);
         btnRankings.setTypeface(tfNevis);
@@ -48,6 +51,13 @@ public class MainActivity extends Activity {
         btnStart.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 Intent intMode = new Intent(MainActivity.this, ModeActivity.class);
+                MainActivity.this.startActivity(intMode);
+            }
+        });
+
+        btnInser.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intMode = new Intent(MainActivity.this, ScorePromptActivity.class);
                 MainActivity.this.startActivity(intMode);
             }
         });

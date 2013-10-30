@@ -60,4 +60,12 @@
         android:layout_below="@+id/btnSettings"
         android:layout_centerHorizontal="true" />
 
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GameTest"
+            android:id="@+id/btnGameTest"
+            android:layout_below="@+id/btnInser"
+            android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>

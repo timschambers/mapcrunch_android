@@ -1,8 +1,10 @@
 package com.thebobs.mapcrunch;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,5 +25,18 @@ public class ModeActivity extends Activity {
         btnMode1.setTypeface(tfNevis);
         btnMode2.setTypeface(tfNevis);
         txtModeHeader.setTypeface(tfChunk);
+        btnMode1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intDes = new Intent(ModeActivity.this, DesActivity.class);
+                ModeActivity.this.startActivity(intDes);
+            }
+        });
+        btnMode2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                Intent intRankings = new Intent(ModeActivity.this, RankingsActivity.class);
+                ModeActivity.this.startActivity(intRankings);
+            }
+        });
+
     }
 }

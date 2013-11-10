@@ -19,5 +19,6 @@
     <string name="title_activity_score_prompt">Hi Score!</string>
     <string name="hello_world">Hello world!</string>
     <string name="des_title">Choose Destination</string>
+    <string name="GameFinishWin">You Win!</string>
 
 </resources>

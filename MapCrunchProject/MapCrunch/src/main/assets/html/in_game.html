@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Street View service</title>
+    <style>
+        html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+function initialize() {
+  var fenway = new google.maps.LatLng(Android.getLatStart(), Android.getLongStart());
+  /*var mapOptions = {
+    center: fenway,
+    zoom: 14,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(
+      document.getElementById('map-canvas'), mapOptions);*/
+  var panoramaOptions = {
+    position: fenway,
+    pov: {
+      heading: 34,
+      pitch: 10
+    }
+  };
+  var panorama = new  google.maps.StreetViewPanorama(document.getElementById('pano'),panoramaOptions);
+  //map.setStreetView(panorama);
+  google.maps.event.addListener(panorama, 'position_changed', function() {
+      console.log(panorama.getPosition());
+      var position = panorama.getPosition();
+      window.steps++;
+      if (position.nb == Android.getLatEnd() && position.ob == Android.getLongEnd()) {
+        Android.finishGame(true, window.timeLimit, window.steps);
+      }
+  });
+  window.timeLimit = android.getTimeLimit();
+  window.timer = document.getElementById("timer");
+  setTimeout(changeTime, 1000);
+}
+
+function changeTime() {
+    if (window.timeLimit > 0) {
+        window.timeLimit--;
+        var minutes = Math.floor(window.timeLimit / 60);
+        var seconds = window.timeLimit % 60;
+        window.timer.innerHTML = minutes + ":" + seconds;
+        setTimeout(changeTime, 1000);
+    } else {
+        Android.finishGame(false, window.timeLimit, window.steps);
+    }
+
+
+}
+window.steps = 0;
+/*
+window.latStart = 42.345573;
+window.longStart = -71.098326;
+window.latEnd = 42.34531;
+window.longEnd = -71.09819700000003;
+window.timeLimit = 120;
+*/
+google.maps.event.addDomListener(window, 'load', initialize);
+
+//initialize();
+    </script>
+</head>
+<body>
+<!-- <div id="map-canvas" style="width: 400px; height: 300px"></div> -->
+<div id="timer" style="position:absolute; background-color: rgba(0,0,0, .5); padding:10px; right: 10px; font-size: 3em; font-weight: bold; color:red; z-index: 100000">2:00</div>
+<div id="pano" style="position:absolute; width: 100%; height: 100%;"></div>
+</body>
+</html>

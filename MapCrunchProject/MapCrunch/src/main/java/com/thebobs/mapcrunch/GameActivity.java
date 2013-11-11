@@ -65,5 +65,6 @@ public class GameActivity extends Activity {
         intWin.putExtra("time", time);
         intWin.putExtra("steps", steps);
         GameActivity.this.startActivity(intWin);
+        this.finish();
     }
 }

@@ -34,35 +34,5 @@ public class SettingsActivity extends PreferenceActivity {
                 }
             });
         }
-
-
     }
-
-    /*
-    @Override
-    public void onBuildHeaders(List<Header> target) {
-        loadHeadersFromResource(R.xml.preference_headers, target);
-    }
-
-    public static class BasicSettingsFragment extends PreferenceFragment {
-        //Context context = getActivity().getApplicationContext();
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-
-            addPreferencesFromResource(R.xml.basic_settings);
-
-            /*Preference button = (Preference)findPreference("button");
-            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-                @Override
-
-                public boolean onPreferenceClick(Preference arg0) {
-                    ScoreDataSource datasource = new ScoreDataSource(context);
-                    datasource.open();
-                    datasource.DropTable();
-                    return true;
-                }
-            });
-        }
-    }*/
 }

@@ -1,8 +1,8 @@
 package com.thebobs.mapcrunch;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
-import android.widget.Button;
 import android.widget.TextView;
 
 /**
@@ -13,6 +13,9 @@ public class GameFinishActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_finish);
 
+        //Get typeface from assets
+        Typeface tfNevis = Typeface.createFromAsset(getAssets(), "fonts/nevis.ttf");
+
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String victory = extras.getString("victory");
@@ -22,6 +25,10 @@ public class GameFinishActivity extends Activity {
             final TextView txtWin = (TextView) findViewById(R.id.txtWin);
             final TextView txtTime = (TextView) findViewById(R.id.txtTime);
             final TextView txtSteps = (TextView) findViewById(R.id.txtSteps);
+
+            txtWin.setTypeface(tfNevis);
+            txtTime.setTypeface(tfNevis);
+            txtSteps.setTypeface(tfNevis);
 
             if (victory.equals("true")){
                 txtWin.setText("You win!");

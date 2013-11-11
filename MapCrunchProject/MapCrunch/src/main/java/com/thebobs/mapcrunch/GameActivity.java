@@ -27,8 +27,7 @@ public class GameActivity extends Activity {
 
         //Get webview, create client, enable javascript and load URL
         WebView gameView = (WebView) findViewById(R.id.webvwMainGame);
-        double latStart = 42.345573, longStart = -71.098326, latEnd = 42.34531, longEnd = -71.09819700000003;
-        int timeLimit = 120;
+
 //        final String url1 = "javascript:(function() { " +
 //                "window.latStart = " + latStart  + "; " +
 //                "window.longStart = "  + longStart + ";" +
@@ -44,10 +43,19 @@ public class GameActivity extends Activity {
 //
 //        });
         gameView.getSettings().setJavaScriptEnabled(true);
-        InGameInterface inGame = new InGameInterface(this, latStart, longStart, latEnd, longEnd, timeLimit, this);
-        gameView.addJavascriptInterface(inGame, "Android");
-        //gameView.loadUrl("https://maps.google.es/maps?q=barcelona&aq=f&ie=UTF8&hl=es&hq=&hnear=Barcelona,+Catalu%C3%B1a&ll=41.385064,2.173404&spn=0.32884,0.727158&t=h&z=11&layer=c&cbll=41.384233,2.177893&panoid=cHQCwlORibRoxMqj2m9IVg&cbp=12,0,,0,0&source=embed&output=svembed");
-        gameView.loadUrl("file:///android_asset/html/in_game.html");
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            InGameInterface inGame = new InGameInterface(this,
+                    extras.getDouble("latStart"),
+                    extras.getDouble("longStart"),
+                    extras.getDouble("latEnd"),
+                    extras.getDouble("longEnd"),
+                    extras.getInt("timeLimit"),
+                    this);
+            gameView.addJavascriptInterface(inGame, "Android");
+            gameView.loadUrl("file:///android_asset/html/in_game.html");
+        }
 
     }
 

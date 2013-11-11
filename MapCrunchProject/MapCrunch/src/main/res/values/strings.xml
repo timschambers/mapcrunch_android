@@ -8,9 +8,7 @@
     <string name="MainMenuSettings">Settings</string>
     <string name="LangSettingsTitle">Languages</string>
     <string name="BasicSettingsTitle">Basic settings</string>
-    <string name="BasicSettingsSum">Languages, ___, and more</string>
-    <string name="AdvSettingsTitle">Advanced settings</string>
-    <string name="AdvSettingsSum">Nothing here</string>
+    <string name="BasicSettingsSum">Languages, rankings, and more</string>
     <string name="LangSelectSetting">Select a language</string>
     <string name="ModeHeader">Select a game mode</string>
     <string name="Mode1Selection">Choose destination</string>
@@ -20,5 +18,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="des_title">Choose Destination</string>
     <string name="GameFinishWin">You Win!</string>
+    <string name="Settings_Clear_Rankings_Title">Clear rankings</string>
+    <string name="Settings_Clear_Rankings_Header_Title">Clear Rankings</string>
 
 </resources>

@@ -12,10 +12,11 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory android:title="Clear Hiscores">
-        <Preference
-            android:key="button"
-        />
+    <PreferenceCategory
+            android:title="@string/Settings_Clear_Rankings_Header_Title">
+
+        <Preference android:title="@string/Settings_Clear_Rankings_Title"
+                    android:key="btnClearRankings"/>
 
     </PreferenceCategory>
 

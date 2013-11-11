@@ -12,4 +12,11 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="Clear Hiscores">
+        <Preference
+            android:key="button"
+        />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

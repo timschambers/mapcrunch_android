@@ -1,6 +1,8 @@
 package com.thebobs.mapcrunch;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
@@ -25,6 +27,7 @@ public class SettingsActivity extends PreferenceActivity {
      * This fragment shows the preferences for the first header (basic settings)
      */
     public static class BasicSettingsFragment extends PreferenceFragment {
+        Context context = getActivity().getApplicationContext();
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -34,6 +37,18 @@ public class SettingsActivity extends PreferenceActivity {
             //        R.xml.advanced_preferences, false);
 
             addPreferencesFromResource(R.xml.basic_settings);
+
+            Preference button = (Preference)findPreference("button");
+            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+
+                public boolean onPreferenceClick(Preference arg0) {
+                    ScoreDataSource datasource = new ScoreDataSource(context);
+                    datasource.open();
+                    datasource.DropTable();
+                    return true;
+                }
+            });
         }
     }
 

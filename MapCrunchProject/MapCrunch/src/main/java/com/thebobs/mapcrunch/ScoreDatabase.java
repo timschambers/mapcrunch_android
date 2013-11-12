@@ -39,7 +39,7 @@ public class ScoreDatabase extends SQLiteOpenHelper {
     }
 
     public void drop(SQLiteDatabase db){
-        db.execSQL("DROP TABLE IF EXISTS" + TABLE_SCORE);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SCORE);
         onCreate(db);
     }
 }

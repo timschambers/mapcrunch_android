@@ -24,9 +24,8 @@ public class RankingsActivity extends Activity {
 
         ScoreDataSource datasource = new ScoreDataSource(this);
         datasource.open();
-        //Random ran = new Random();
-        //datasource.insertScore("Player " + Integer.toString(ran.nextInt(100)), ran.nextDouble()*100);
-        ArrayList <Ranking> samplerankings = datasource.getTopScores(10);
+
+        ArrayList <Ranking> samplerankings = datasource.getTopScores(20);
 
 
 

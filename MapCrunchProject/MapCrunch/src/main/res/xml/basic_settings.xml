@@ -15,7 +15,7 @@
     <PreferenceCategory
             android:title="@string/Settings_Clear_Rankings_Header_Title">
 
-        <Preference android:title="@string/Settings_Clear_Rankings_Title"
+        <Preference android:title="Clear Rankings"
                     android:key="btnClearRankings"/>
 
     </PreferenceCategory>

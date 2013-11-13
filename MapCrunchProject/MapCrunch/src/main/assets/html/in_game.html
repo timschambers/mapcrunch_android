@@ -35,6 +35,7 @@ function initialize() {
       var position = panorama.getPosition();
       window.steps++;
       if (position.nb == Android.getLatEnd() && position.ob == Android.getLongEnd()) {
+        //TODO: calculate distance and pass to finishGame for score calculation
         Android.finishGame(true, window.timeLimit, window.steps);
       }
   });

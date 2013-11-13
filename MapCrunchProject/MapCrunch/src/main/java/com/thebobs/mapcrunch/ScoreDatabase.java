@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.sql.SQLClientInfoException;
+
 /**
  * Created by abulazel on 10/23/13.
  *
@@ -33,7 +35,11 @@ public class ScoreDatabase extends SQLiteOpenHelper {
     //db wipe and restart, necessary for SQLite
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXISTS" + TABLE_SCORE);
+        drop(db);
+    }
+
+    public void drop(SQLiteDatabase db){
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_SCORE);
         onCreate(db);
     }
 }

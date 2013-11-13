@@ -1,6 +1,5 @@
 package com.thebobs.mapcrunch;
 
-import java.util.List;
 import java.util.ArrayList;
 
 import android.content.ContentValues;
@@ -53,5 +52,9 @@ public class ScoreDataSource {
 
     private Ranking cursorToScore(Cursor cursor, int index){
         return new Ranking(cursor.getString(1), cursor.getDouble(2), index);
+    }
+
+    public void DropTable( ){
+        dbhelper.drop(db);
     }
 }

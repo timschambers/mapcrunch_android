@@ -1,56 +1,47 @@
 package com.thebobs.mapcrunch;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
-import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
-
-import java.util.List;
+import android.widget.Toast;
 
 public class SettingsActivity extends PreferenceActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-    }
+        addPreferencesFromResource(R.xml.basic_settings);
 
-    /**
-     * Populate the activity with the top-level headers.
-     */
-    @Override
-    public void onBuildHeaders(List<Header> target) {
-        loadHeadersFromResource(R.xml.preference_headers, target);
-    }
+        final Preference button = (Preference)findPreference("btnClearRankings");
 
-    /**
-     * This fragment shows the preferences for the first header (basic settings)
-     */
-    public static class BasicSettingsFragment extends PreferenceFragment {
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
+        if (button != null) {
+            button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference arg0) {
 
-            //TODO: May need to set default value at some point - this is how it's done
-            //PreferenceManager.setDefaultValues(getActivity(),
-            //        R.xml.advanced_preferences, false);
+                    new AlertDialog.Builder(SettingsActivity.this)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .setTitle("Clear rankings")
+                            .setMessage("Are you sure you want to clear the rankings?")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
 
-            addPreferencesFromResource(R.xml.basic_settings);
-        }
-    }
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    ScoreDataSource datasource = new ScoreDataSource(SettingsActivity.this);
+                                    datasource.open();
+                                    datasource.DropTable();
+                                    Toast.makeText(getApplicationContext(), "Rankings cleared",
+                                            Toast.LENGTH_SHORT).show();
+                                }
 
-    /**
-     * This fragment shows the preferences for the second header (advanced settings)
-     */
-    public static class AdvSettingsFragment extends PreferenceFragment {
-        @Override
-        public void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
 
-            //TODO: May need to set default value at some point - this is how it's done
-            //PreferenceManager.setDefaultValues(getActivity(),
-            //        R.xml.advanced_settings, false);
-
-            // Load the preferences from an XML resource
-            addPreferencesFromResource(R.xml.advanced_settings);
+                    return true;
+                }
+            });
         }
     }
 }

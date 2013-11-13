@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+<<<<<<< HEAD
 import android.widget.TextView;
 import android.widget.SearchView;
+=======
+>>>>>>> 2c16b0b1c72a4751b19d3f71f87e84ef0a7e6d5a
 
 public class MainActivity extends Activity {
 
@@ -70,6 +71,11 @@ public class MainActivity extends Activity {
         btnGameTest.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 Intent intMode = new Intent(MainActivity.this, GameActivity.class);
+                intMode.putExtra("latStart", 42.345573);
+                intMode.putExtra("longStart", -71.098326);
+                intMode.putExtra("latEnd", 42.34531);
+                intMode.putExtra("longEnd", -71.09819700000003);
+                intMode.putExtra("timeLimit", 120);
                 MainActivity.this.startActivity(intMode);
             }
         });

@@ -3,11 +3,13 @@
     package="com.thebobs.mapcrunch"
     android:versionCode="11"
     android:versionName="11.0" >
-    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="17" />
     <uses-feature
             android:glEsVersion="0x00020000"
             android:required="true"/>
 
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
 
     <application
         android:allowBackup="true"
@@ -53,6 +55,7 @@
 <meta-data
     android:name="com.google.android.maps.v2.API_KEY"
     android:value="AIzaSyCXwBaPlx4F_EoDU5ewGCaidh5vIxMJwoQ"/>
+        <activity android:name=".GameFinishActivity"/>
 
     </application>
     <permission

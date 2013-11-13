@@ -59,12 +59,11 @@ public class GameActivity extends Activity {
 
     }
 
-    public void finishGame(String victory, String time, String steps/*, TODO: String distance*/) {
+    public void finishGame(String victory, String time, String steps) {
         Intent intWin = new Intent(GameActivity.this, GameFinishActivity.class);
         intWin.putExtra("victory", victory);
         intWin.putExtra("time", time);
         intWin.putExtra("steps", steps);
-        //TODO: intWin.putExtra("distance", distance);
         GameActivity.this.startActivity(intWin);
         this.finish();
     }

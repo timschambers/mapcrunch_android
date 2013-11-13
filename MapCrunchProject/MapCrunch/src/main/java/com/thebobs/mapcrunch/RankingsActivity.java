@@ -5,8 +5,11 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 
 import java.util.ArrayList;
+
+import java.util.Random;
 
 public class RankingsActivity extends Activity {
 

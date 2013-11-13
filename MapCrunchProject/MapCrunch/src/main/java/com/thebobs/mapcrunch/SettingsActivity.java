@@ -1,11 +1,16 @@
 package com.thebobs.mapcrunch;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceFragment;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class SettingsActivity extends PreferenceActivity {
     @Override

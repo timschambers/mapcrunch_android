@@ -17,16 +17,11 @@
     <string name="title_activity_score_prompt">Hi Score!</string>
     <string name="hello_world">Hello world!</string>
     <string name="des_title">Choose Destination</string>
-<<<<<<< HEAD
     <string name="search_hint">Search Places</string>
     <string name="action_search">Search</string>
     <string name="search_settings">Search Places</string>
     <string name="hello">hello</string>
-
-=======
     <string name="GameFinishWin">You Win!</string>
     <string name="Settings_Clear_Rankings_Title">Clear rankings</string>
     <string name="Settings_Clear_Rankings_Header_Title">Clear Rankings</string>
->>>>>>> 2c16b0b1c72a4751b19d3f71f87e84ef0a7e6d5a
-
 </resources>

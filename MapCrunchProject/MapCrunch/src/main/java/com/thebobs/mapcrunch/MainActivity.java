@@ -8,11 +8,6 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-<<<<<<< HEAD
-import android.widget.TextView;
-import android.widget.SearchView;
-=======
->>>>>>> 2c16b0b1c72a4751b19d3f71f87e84ef0a7e6d5a
 
 public class MainActivity extends Activity {
 

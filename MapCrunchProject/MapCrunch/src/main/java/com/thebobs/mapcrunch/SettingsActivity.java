@@ -24,12 +24,26 @@ public class SettingsActivity extends PreferenceActivity {
             button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference arg0) {
-                    //Alex - I know all the code for showing the button and registering the
-                    //click is working. This crashes when you click the button, so I something must
-                    //is wrong with the database stuff.
-                    ScoreDataSource datasource = new ScoreDataSource(SettingsActivity.this);
-                    datasource.open();
-                    datasource.DropTable();
+
+                    new AlertDialog.Builder(SettingsActivity.this)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .setTitle("Clear rankings")
+                            .setMessage("Are you sure you want to clear the rankings?")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    ScoreDataSource datasource = new ScoreDataSource(SettingsActivity.this);
+                                    datasource.open();
+                                    datasource.DropTable();
+                                    Toast.makeText(getApplicationContext(), "Rankings cleared",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
+
                     return true;
                 }
             });

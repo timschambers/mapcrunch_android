@@ -3,6 +3,8 @@
     package="com.thebobs.mapcrunch"
     android:versionCode="11"
     android:versionName="11.0" >
+    android:versionCode="1"
+    android:versionName="1.0" >
     <uses-feature
             android:glEsVersion="0x00020000"
             android:required="true"/>
@@ -18,9 +20,7 @@
         android:theme="@style/AppTheme" >
 
         <uses-library android:name="com.google.android.maps" />
-<meta-data
-    android:name="com.google.android.gms.version"
-    android:value="4030500"/>
+
         <activity
             android:name="com.thebobs.mapcrunch.MainActivity"
             android:label="@string/app_name" >
@@ -29,24 +29,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-
-            <!-- Points to searchable activity -->
-            <meta-data android:name="android.app.default_searchable"
-                android:value=".MainActivity" />
-
-            <!-- Points to searchable meta data -->
-
         </activity>
         <activity android:name="com.thebobs.mapcrunch.SettingsActivity" />
         <activity android:name="com.thebobs.mapcrunch.RankingsActivity" />
         <activity android:name="com.thebobs.mapcrunch.ModeActivity" />
-        <activity
-                  android:name="com.thebobs.mapcrunch.DesActivity"
-                  android:theme="@style/AppBaseTheme"/>
-
         <activity
             android:name="com.thebobs.mapcrunch.ScorePromptActivity"
             android:label="@string/title_activity_score_prompt" >
@@ -57,12 +43,10 @@
     android:value="AIzaSyCXwBaPlx4F_EoDU5ewGCaidh5vIxMJwoQ"/>
         <activity android:name=".GameFinishActivity"/>
 
+        <meta-data
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="AIzaSyCXwBaPlx4F_EoDU5ewGCaidh5vIxMJwoQ"/>
     </application>
-    <permission
-        android:name="com.thebobs.mapcrunch"
-        android:protectionLevel="signature" />
-        <uses-permission android:name="com.thebobs.mapcrunch.permission.MAPS_RECEIVE" />
-
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -71,17 +55,6 @@
          Google Maps Android API v2, but are recommended. -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <!-- Allows the Google Maps Android API V2 to use WiFi or mobile cell data (or both) to determine the device's location -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <!-- Allows the Google Maps Android API V2 to use the Global Positioning System (GPS)
-    to determine the device's location to within a very small area -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
-    <!-- Allows to contact Google Serves -->
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
 
 

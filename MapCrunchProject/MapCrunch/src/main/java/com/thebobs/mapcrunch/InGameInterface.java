@@ -42,7 +42,7 @@ public class InGameInterface {
     }
 
     private int timeLimit;
-    /** Instantiate the interface and set the context */
+    /* Instantiate the interface and set the context */
     InGameInterface(Context c, double latStart, double longStart, double latEnd, double longEnd, int timeLimit, GameActivity game) {
         mContext = c;
         this.latStart = latStart;

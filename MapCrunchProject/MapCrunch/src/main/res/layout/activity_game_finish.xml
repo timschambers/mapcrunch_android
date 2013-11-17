@@ -51,4 +51,12 @@
             android:id="@+id/txtSteps"
             android:layout_gravity="center"/>
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Your Score: "
+            android:id="@+id/txtScore"
+            android:layout_gravity="center"/>
+
 </LinearLayout>

@@ -19,27 +19,38 @@ public class GameFinishActivity extends Activity {
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
             String victory = extras.getString("victory");
-            String time = extras.getString("time");
-            String steps = extras.getString("steps");
-            String timelimit = extras.getString("timelimit");
+            int time = Integer.parseInt(extras.getString("time"));
+            int steps = Integer.parseInt(extras.getString("steps"));
+            int timelimit = Integer.parseInt(extras.getString("timelimit"));
+            int timeelapsed = timelimit - time;
 
             final TextView txtWin = (TextView) findViewById(R.id.txtWin);
             final TextView txtTime = (TextView) findViewById(R.id.txtTime);
             final TextView txtSteps = (TextView) findViewById(R.id.txtSteps);
+            final TextView txtScore = (TextView) findViewById(R.id.txtScore);
 
             txtWin.setTypeface(tfNevis);
             txtTime.setTypeface(tfNevis);
             txtSteps.setTypeface(tfNevis);
+            txtScore.setTypeface(tfNevis);
 
             if (victory.equals("true")){
                 txtWin.setText("You win!");
+                double score = (steps*180) / timeelapsed;
+                txtTime.setText("Time Elapsed: " + timeelapsed + " seconds");
+                txtSteps.setText("Steps: " + steps);
+                txtScore.setText("Your score: " + score);
+                
+                //Alex - add score to database here. Maybe show a message about whether or not
+                //they made the top ten and what their position is if they did?
             } else {
                 txtWin.setText("You lose!");
+                txtTime.setText("Time Elapsed: " + timeelapsed + " seconds");
+                txtSteps.setText("Steps: " + steps);
+                txtScore.setText("Press back to try again!");
             }
 
-            int timeelapsed = Integer.parseInt(timelimit) - Integer.parseInt(time);
-            txtTime.setText("Time Elapsed: " + timeelapsed);
-            txtSteps.setText("Steps: " + steps);
+
         }
 
 

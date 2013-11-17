@@ -73,7 +73,7 @@ public class MainActivity extends Activity {
                 intMode.putExtra("longStart", -71.098326);
                 intMode.putExtra("latEnd", 42.345032);
                 intMode.putExtra("longEnd", -71.098053);
-                intMode.putExtra("timeLimit", 120);
+                intMode.putExtra("timeLimit", 10);
                 MainActivity.this.startActivity(intMode);
             }
         });

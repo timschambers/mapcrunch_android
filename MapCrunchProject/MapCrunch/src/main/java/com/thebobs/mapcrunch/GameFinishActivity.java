@@ -35,19 +35,19 @@ public class GameFinishActivity extends Activity {
             txtScore.setTypeface(tfNevis);
 
             if (victory.equals("true")){
-                txtWin.setText("You win!");
+                txtWin.setText(getString(R.string.GameFinishWin));
                 double score = (steps*180) / timeelapsed;
-                txtTime.setText("Time Elapsed: " + timeelapsed + " seconds");
-                txtSteps.setText("Steps: " + steps);
-                txtScore.setText("Your score: " + score);
-                
+                txtTime.setText(getString(R.string.GameFinishTime) + timeelapsed + getString(R.string.GameFinishSeconds));
+                txtSteps.setText(getString(R.string.GameFinishSteps) + steps);
+                txtScore.setText(getString(R.string.GameFinishScore) + score);
+
                 //Alex - add score to database here. Maybe show a message about whether or not
                 //they made the top ten and what their position is if they did?
             } else {
-                txtWin.setText("You lose!");
-                txtTime.setText("Time Elapsed: " + timeelapsed + " seconds");
-                txtSteps.setText("Steps: " + steps);
-                txtScore.setText("Press back to try again!");
+                txtWin.setText(getString(R.string.GameFinishLose));
+                txtTime.setText(getString(R.string.GameFinishTime) + timeelapsed + getString(R.string.GameFinishSeconds));
+                txtSteps.setText(getString(R.string.GameFinishSteps) + steps);
+                txtScore.setText(getString(R.string.GameFinishTryAgain));
             }
 
 

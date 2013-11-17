@@ -71,8 +71,8 @@ public class MainActivity extends Activity {
                 Intent intMode = new Intent(MainActivity.this, GameActivity.class);
                 intMode.putExtra("latStart", 42.345573);
                 intMode.putExtra("longStart", -71.098326);
-                intMode.putExtra("latEnd", 42.34531);
-                intMode.putExtra("longEnd", -71.09819700000003);
+                intMode.putExtra("latEnd", 42.345032);
+                intMode.putExtra("longEnd", -71.098053);
                 intMode.putExtra("timeLimit", 120);
                 MainActivity.this.startActivity(intMode);
             }

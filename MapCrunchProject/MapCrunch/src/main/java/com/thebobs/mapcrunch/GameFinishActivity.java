@@ -21,6 +21,7 @@ public class GameFinishActivity extends Activity {
             String victory = extras.getString("victory");
             String time = extras.getString("time");
             String steps = extras.getString("steps");
+            String timelimit = extras.getString("timelimit");
 
             final TextView txtWin = (TextView) findViewById(R.id.txtWin);
             final TextView txtTime = (TextView) findViewById(R.id.txtTime);
@@ -35,8 +36,10 @@ public class GameFinishActivity extends Activity {
             } else {
                 txtWin.setText("You lose!");
             }
-            txtTime.setText((time));
-            txtSteps.setText((steps));
+
+            int timeelapsed = Integer.parseInt(timelimit) - Integer.parseInt(time);
+            txtTime.setText("Time Elapsed: " + timeelapsed);
+            txtSteps.setText("Steps: " + steps);
         }
 
 

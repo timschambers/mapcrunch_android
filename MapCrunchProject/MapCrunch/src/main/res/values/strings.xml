@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">scoutt</string>
+    <string name="app_name_Des">Destinations</string>
+
     <string name="action_settings">Settings</string>
     <string name="MainMenuStart">Start</string>
     <string name="mainMenuRankings">Rankings</string>
@@ -24,4 +26,6 @@
     <string name="GameFinishWin">You Win!</string>
     <string name="Settings_Clear_Rankings_Title">Clear rankings</string>
     <string name="Settings_Clear_Rankings_Header_Title">Clear Rankings</string>
+
+
 </resources>

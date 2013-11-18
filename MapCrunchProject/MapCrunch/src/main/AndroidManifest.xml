@@ -16,28 +16,21 @@
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-
         <uses-library android:name="com.google.android.maps" />
+
+        <meta-data android:name="android.app.default_searchable" android:value=".DesActivity" />
 <meta-data
     android:name="com.google.android.gms.version"
     android:value="4030500"/>
         <activity
             android:name="com.thebobs.mapcrunch.MainActivity"
             android:label="@string/app_name" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.SEARCH" />
-            </intent-filter>
-
-            <!-- Points to searchable activity -->
-            <meta-data android:name="android.app.default_searchable"
-                android:value=".MainActivity" />
-
-            <!-- Points to searchable meta data -->
 
         </activity>
         <activity android:name="com.thebobs.mapcrunch.SettingsActivity" />
@@ -45,17 +38,39 @@
         <activity android:name="com.thebobs.mapcrunch.ModeActivity" />
         <activity
                   android:name="com.thebobs.mapcrunch.DesActivity"
-                  android:theme="@style/AppBaseTheme"/>
+                  android:theme="@style/AppBaseTheme"
+                  android:launchMode="singleTop">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+
+
+            <!-- Points to searchable meta data -->
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+            <!-- Points to searchable activity -->
+
+
+        </activity>
 
         <activity
             android:name="com.thebobs.mapcrunch.ScorePromptActivity"
             android:label="@string/title_activity_score_prompt" >
         </activity>
         <activity android:name=".GameActivity"/>
+        <activity android:name=".GameFinishActivity"/>
+
+
+        <provider
+            android:name=".PlaceProvider"
+            android:authorities="com.thebobs.mapcrunch.PlaceProvider"
+            android:exported="false" />
+
 <meta-data
     android:name="com.google.android.maps.v2.API_KEY"
-    android:value="AIzaSyCXwBaPlx4F_EoDU5ewGCaidh5vIxMJwoQ"/>
-        <activity android:name=".GameFinishActivity"/>
+    android:value="AIzaSyDsmaWRCh3f8GzofR4rZyfjgNvJKjRmeYY"/>
 
     </application>
     <permission
@@ -67,21 +82,15 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-    <!-- The following two permissions are not required to use
-         Google Maps Android API v2, but are recommended. -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!-- Allows the Google Maps Android API V2 to use WiFi or mobile cell data (or both) to determine the device's location -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-    <!-- Allows the Google Maps Android API V2 to use the Global Positioning System (GPS)
-    to determine the device's location to within a very small area -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-    <!-- Allows to contact Google Serves -->
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
 
 

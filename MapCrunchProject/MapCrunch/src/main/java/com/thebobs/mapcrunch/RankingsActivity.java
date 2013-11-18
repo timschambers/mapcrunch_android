@@ -5,11 +5,8 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.PopupWindow;
 
 import java.util.ArrayList;
-
-import java.util.Random;
 
 public class RankingsActivity extends Activity {
 
@@ -27,15 +24,11 @@ public class RankingsActivity extends Activity {
 
         ArrayList <Ranking> samplerankings = datasource.getTopScores(20);
 
-
-
-
         //Get font from assets to pass into adapter
         Typeface tfNevis = Typeface.createFromAsset(getAssets(), "fonts/nevis.ttf");
         ArrayAdapter adapter = new RankingArrayAdapter(this,
                 R.layout.activity_rankings,samplerankings, tfNevis);
 
         lstRankings.setAdapter(adapter);
-        //lstRankings.setOnItemClickListener(new Listener());
     }
 }

@@ -6,11 +6,8 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -73,7 +70,7 @@ public class MainActivity extends Activity {
                 intMode.putExtra("longStart", -71.098326);
                 intMode.putExtra("latEnd", 42.345032);
                 intMode.putExtra("longEnd", -71.098053);
-                intMode.putExtra("timeLimit", 10);
+                intMode.putExtra("timeLimit", 100);
                 MainActivity.this.startActivity(intMode);
             }
         });

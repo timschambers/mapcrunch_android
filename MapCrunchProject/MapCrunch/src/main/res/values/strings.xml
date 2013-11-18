@@ -25,7 +25,7 @@
     <string name="Settings_Clear_Rankings_Header_Title">Clear Rankings</string>
     <string name="GameFinishLose">You lose!</string>
     <string name="GameFinishTime">Time Elapsed:</string>
-    <string name="GameFinishSeconds">seconds</string>
+    <string name="GameFinishSeconds"> seconds</string>
     <string name="GameFinishSteps">Steps:</string>
     <string name="GameFinishTryAgain">Press back to try again!</string>
     <string name="GameFinishScore">Your score:</string>

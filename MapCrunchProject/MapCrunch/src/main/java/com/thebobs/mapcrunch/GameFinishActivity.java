@@ -43,7 +43,7 @@ public class GameFinishActivity extends Activity {
                 txtSteps.setText(getString(R.string.GameFinishSteps) + steps);
                 txtScore.setText(getString(R.string.GameFinishScore) + score);
 
-                //Alex - add score to database here. Maybe show a message about whether or not
+                //Alex YO - add score to database here. Maybe show a message about whether or not
                 //they made the top ten and what their position is if they did?
             } else {
                 txtWin.setText(getString(R.string.GameFinishLose));

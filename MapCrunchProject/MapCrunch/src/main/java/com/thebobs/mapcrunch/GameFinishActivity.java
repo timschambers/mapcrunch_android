@@ -3,6 +3,7 @@ package com.thebobs.mapcrunch;
 import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 
 /**
@@ -28,6 +29,7 @@ public class GameFinishActivity extends Activity {
             final TextView txtTime = (TextView) findViewById(R.id.txtTime);
             final TextView txtSteps = (TextView) findViewById(R.id.txtSteps);
             final TextView txtScore = (TextView) findViewById(R.id.txtScore);
+            final EditText txtName = (EditText) findViewById(R.id.txtName);
 
             txtWin.setTypeface(tfNevis);
             txtTime.setTypeface(tfNevis);
@@ -48,6 +50,7 @@ public class GameFinishActivity extends Activity {
                 txtTime.setText(getString(R.string.GameFinishTime) + timeelapsed + getString(R.string.GameFinishSeconds));
                 txtSteps.setText(getString(R.string.GameFinishSteps) + steps);
                 txtScore.setText(getString(R.string.GameFinishTryAgain));
+                txtName.setVisibility(4);
             }
 
 

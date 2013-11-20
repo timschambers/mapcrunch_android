@@ -54,7 +54,24 @@
 
 
         </activity>
+        <activity
+            android:name="com.thebobs.mapcrunch.DesActivity2"
+            android:theme="@style/AppBaseTheme"
+            android:launchMode="singleTop">
 
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+
+
+            <!-- Points to searchable meta data -->
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+            <!-- Points to searchable activity -->
+
+
+        </activity>
         <activity
             android:name="com.thebobs.mapcrunch.ScorePromptActivity"
             android:label="@string/title_activity_score_prompt" >

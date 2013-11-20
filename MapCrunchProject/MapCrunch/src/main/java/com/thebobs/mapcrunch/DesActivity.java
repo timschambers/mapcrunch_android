@@ -15,9 +15,14 @@
         import android.support.v4.view.MenuItemCompat;
         import android.support.v7.app.ActionBarActivity;
         import android.support.v7.widget.SearchView;
+        import android.text.Editable;
+        import android.text.InputType;
         import android.util.Log;
+        import android.view.LayoutInflater;
         import android.view.Menu;
         import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.EditText;
 
         import com.google.android.gms.common.ConnectionResult;
         import com.google.android.gms.common.GooglePlayServicesClient;
@@ -30,20 +35,29 @@
         import com.google.android.gms.maps.model.Marker;
         import com.google.android.gms.maps.model.MarkerOptions;
 
+        import java.util.Random;
 
-public class DesActivity extends ActionBarActivity implements LoaderCallbacks<Cursor>, GoogleMap.OnMarkerClickListener, GooglePlayServicesClient.ConnectionCallbacks,
+
+        public class DesActivity extends ActionBarActivity implements LoaderCallbacks<Cursor>, GoogleMap.OnMarkerClickListener, GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener {
 
     GoogleMap mGoogleMap;
     Marker marker_1;
     Location mCurrentLocation;
     LocationClient mLocationClient;
+    final Context context = this;
+     EditText userInput = null;
+    EditText userInput2 = null;
+
     double lat = 0;
     double lon = 0;
+    double lats = 0;
+    double lons = 0;
+            Bundle bundleTest = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        bundleTest =  getIntent().getExtras();
         setContentView(R.layout.activity_des);
 System.out.print("here??%%KJHKJ%HJ%J%");
         SupportMapFragment fragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
@@ -153,9 +167,38 @@ System.out.print("here??%%KJHKJ%HJ%J%");
     @Override
     public boolean onMarkerClick(Marker marker) {
         // TODO Auto-generated method stub
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
-                .setNegativeButton("No", dialogClickListener).show();
+
+        LayoutInflater li = LayoutInflater.from(context);
+        View promptsView;
+        String active = bundleTest.getString("activity");
+        System.out.println("This is the active :" + active);
+if(active.equals("Des1")){
+      promptsView  = li.inflate(R.layout.prompt, null);
+    userInput2 = (EditText) promptsView
+            .findViewById(R.id.editTextUserInput2);
+    userInput2.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+    userInput = (EditText) promptsView
+            .findViewById(R.id.editTextUserInput);
+    userInput.setInputType(InputType.TYPE_NUMBER_FLAG_DECIMAL);
+    System.out.println("Des1" + active);
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+    alertDialogBuilder.setView(promptsView).setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
+
+
+}else{
+    System.out.println("Des2");
+    promptsView  = li.inflate(R.layout.prompt2, null);
+    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+    alertDialogBuilder.setView(promptsView).setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
+
+
+}
+
+
+
+
+       // AlertDialog.Builder builder = new AlertDialog.Builder(this);
+       // builder.setMessage("Enter Radius from Start")
 
          return true;
     }
@@ -167,14 +210,38 @@ System.out.print("here??%%KJHKJ%HJ%J%");
                 case DialogInterface.BUTTON_POSITIVE:
                     try
                     {
-                        mCurrentLocation = mLocationClient.getLastLocation();
+                       System.out.println("got to button_pos");
+                        String active = bundleTest.getString("activity");
+                        System.out.println(" 2nd active " + active);
+
+                        lats = 0;
+                        lons = 0;
+                        int r1 = (new Random()).nextInt(1);
+
+                        int time = 0;
+                       if(active.equals("Des1")){
+                           double i1=Integer.parseInt(userInput.getText().toString());
+                           double i12 = Integer.parseInt(userInput.getText().toString()) - i1;
+                           mCurrentLocation = mLocationClient.getLastLocation();
+                           System.out.println("ilil2: " + i1 + i12);
+                           lats = (lat - (i1/6000) - r1);
+                           lons = (lon - (i12/6000) - r1);
+                           time = Integer.parseInt(userInput2.getText().toString());
+                       }else{
+
+                           lats = bundleTest.getDouble("latStart_des2");
+                           lons = bundleTest.getDouble("longStart_des2");
+                           time = 120;
+
+                       }
+                        System.out.println("ADDITION: " + lats + " " + lons + " " + time);
 
                         Intent intMode = new Intent(DesActivity.this, GameActivity.class);
-                        intMode.putExtra("latStart", mCurrentLocation.getLatitude());
-                        intMode.putExtra("longStart", mCurrentLocation.getLongitude());
+                        intMode.putExtra("latStart", lats);
+                        intMode.putExtra("longStart" , lons);
                         intMode.putExtra("latEnd", lat);
                         intMode.putExtra("longEnd", lon);
-                        intMode.putExtra("timeLimit", 120);
+                        intMode.putExtra("timeLimit", time);
                         DesActivity.this.startActivity(intMode);
                     }catch(Exception e){
 

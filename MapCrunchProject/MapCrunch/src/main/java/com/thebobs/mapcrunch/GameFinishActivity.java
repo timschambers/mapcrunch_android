@@ -35,6 +35,7 @@ public class GameFinishActivity extends Activity {
             final TextView txtSteps = (TextView) findViewById(R.id.txtSteps);
             final TextView txtScore = (TextView) findViewById(R.id.txtScore);
             final EditText txtName = (EditText) findViewById(R.id.txtName);
+            final TextView txtNamePrompt = (TextView) findViewById(R.id.txtView);
             final Button doneBtn = (Button) findViewById(R.id.btnDone);
 
             txtWin.setTypeface(tfNevis);
@@ -60,10 +61,17 @@ public class GameFinishActivity extends Activity {
                                     .setIcon(android.R.drawable.ic_dialog_alert)
                                     .setTitle("Congratulations!")
                                     .setMessage("Congratulations on your high score! You are ranked player number: " + rank )
-                                    .setPositiveButton("Ok", null)
+                                    .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                        @Override //finish when ok is clicked
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            finish();
+                                        }
+                                    })
                                     .show();
                         }
-                        finish();
+                        else{
+                            finish();
+                        }
                     }
                 });
 
@@ -73,6 +81,7 @@ public class GameFinishActivity extends Activity {
                 txtSteps.setText(getString(R.string.GameFinishSteps) + steps);
                 txtScore.setText(getString(R.string.GameFinishTryAgain));
                 txtName.setVisibility(4);
+                txtNamePrompt.setVisibility(4);
                 doneBtn.setVisibility(4);
             }
 

@@ -4,8 +4,8 @@
         android:id="@+id/action_search"
         android:orderInCategory="100"
         android:title="@string/action_search"
-        android:actionViewClass="android.support.v7.widget.SearchView"
-        android:showAsAction="always" />
+        map:actionViewClass="android.support.v7.widget.SearchView"
+        map:showAsAction="always" />
 
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"

@@ -3,6 +3,8 @@
     package="com.thebobs.mapcrunch"
     android:versionCode="11"
     android:versionName="11.0" >
+    android:versionCode="1"
+    android:versionName="1.0" >
     <uses-feature
             android:glEsVersion="0x00020000"
             android:required="true"/>
@@ -31,7 +33,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name="com.thebobs.mapcrunch.SettingsActivity" />
         <activity android:name="com.thebobs.mapcrunch.RankingsActivity" />
@@ -51,8 +52,6 @@
             <meta-data android:name="android.app.searchable"
                 android:resource="@xml/searchable"/>
             <!-- Points to searchable activity -->
-
-
         </activity>
         <activity
             android:name="com.thebobs.mapcrunch.DesActivity2"
@@ -89,12 +88,10 @@
     android:name="com.google.android.maps.v2.API_KEY"
     android:value="AIzaSyDsmaWRCh3f8GzofR4rZyfjgNvJKjRmeYY"/>
 
+        <meta-data
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="AIzaSyCXwBaPlx4F_EoDU5ewGCaidh5vIxMJwoQ"/>
     </application>
-    <permission
-        android:name="com.thebobs.mapcrunch"
-        android:protectionLevel="signature" />
-        <uses-permission android:name="com.thebobs.mapcrunch.permission.MAPS_RECEIVE" />
-
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -108,7 +105,4 @@
      <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
      <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-
-
-
 </manifest>

@@ -1,6 +1,4 @@
-
-
-        package com.thebobs.mapcrunch;
+package com.thebobs.mapcrunch;
 
         import android.app.AlertDialog;
         import android.app.SearchManager;
@@ -23,6 +21,8 @@
         import android.view.MenuItem;
         import android.view.View;
         import android.widget.EditText;
+        import android.app.Activity;
+        import android.os.Bundle;
 
         import com.google.android.gms.common.ConnectionResult;
         import com.google.android.gms.common.GooglePlayServicesClient;
@@ -38,32 +38,31 @@
         import java.util.Random;
 
 
-        public class DesActivity extends ActionBarActivity implements LoaderCallbacks<Cursor>, GoogleMap.OnMarkerClickListener, GooglePlayServicesClient.ConnectionCallbacks,
-        GooglePlayServicesClient.OnConnectionFailedListener {
-
+public class DesActivity extends ActionBarActivity implements LoaderCallbacks<Cursor>, GoogleMap.OnMarkerClickListener, GooglePlayServicesClient.ConnectionCallbacks,
+GooglePlayServicesClient.OnConnectionFailedListener {
     GoogleMap mGoogleMap;
     Marker marker_1;
     Location mCurrentLocation;
     LocationClient mLocationClient;
     final Context context = this;
-     EditText userInput = null;
+    EditText userInput = null;
     EditText userInput2 = null;
 
     double lat = 0;
     double lon = 0;
     double lats = 0;
     double lons = 0;
-            Bundle bundleTest = null;
+    Bundle bundleTest = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         bundleTest =  getIntent().getExtras();
         setContentView(R.layout.activity_des);
-System.out.print("here??%%KJHKJ%HJ%J%");
         SupportMapFragment fragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
 
         mGoogleMap = fragment.getMap();
-         mLocationClient = new LocationClient(this, this, this);
+        mLocationClient = new LocationClient(this, this, this);
         mLocationClient.connect();
 
 

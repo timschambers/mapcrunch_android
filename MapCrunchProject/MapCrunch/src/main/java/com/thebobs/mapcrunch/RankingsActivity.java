@@ -24,15 +24,11 @@ public class RankingsActivity extends Activity {
 
         ArrayList <Ranking> samplerankings = datasource.getTopScores(20);
 
-
-
-
         //Get font from assets to pass into adapter
         Typeface tfNevis = Typeface.createFromAsset(getAssets(), "fonts/nevis.ttf");
         ArrayAdapter adapter = new RankingArrayAdapter(this,
                 R.layout.activity_rankings,samplerankings, tfNevis);
 
         lstRankings.setAdapter(adapter);
-        //lstRankings.setOnItemClickListener(new Listener());
     }
 }

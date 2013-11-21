@@ -28,12 +28,13 @@ public class ModeActivity extends Activity {
         btnMode1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
                 Intent intDes = new Intent(ModeActivity.this, DesActivity.class);
+                intDes.putExtra("activity", "Des1");
                 ModeActivity.this.startActivity(intDes);
             }
         });
         btnMode2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v){
-                Intent intRankings = new Intent(ModeActivity.this, RankingsActivity.class);
+                Intent intRankings = new Intent(ModeActivity.this, DesActivity2.class);
                 ModeActivity.this.startActivity(intRankings);
             }
         });

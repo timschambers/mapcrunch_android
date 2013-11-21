@@ -37,12 +37,12 @@ public class InGameInterface {
     }
 
     @JavascriptInterface
-    public void finishGame(String victory, String time, String steps) {
-        game.finishGame(victory, time, steps);
+    public void finishGame(String victory, String time, String timelimit, String steps) {
+        game.finishGame(victory, time, timelimit, steps);
     }
 
     private int timeLimit;
-    /** Instantiate the interface and set the context */
+    /* Instantiate the interface and set the context */
     InGameInterface(Context c, double latStart, double longStart, double latEnd, double longEnd, int timeLimit, GameActivity game) {
         mContext = c;
         this.latStart = latStart;

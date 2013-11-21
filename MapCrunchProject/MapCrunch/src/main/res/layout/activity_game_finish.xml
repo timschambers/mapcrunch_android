@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Time: "
+            android:text="@string/GameFinishTime"
             android:id="@+id/txtTime"
             android:layout_gravity="center"/>
 
@@ -47,8 +47,41 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Steps: "
+            android:text="@string/GameFinishSteps"
             android:id="@+id/txtSteps"
+            android:layout_gravity="center"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="@string/GameFinishScore"
+            android:id="@+id/txtScore"
+            android:layout_gravity="center"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Please enter your name:"
+            android:id="@+id/txtView"
+            android:layout_gravity="center"/>
+
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Enter your name"
+            android:ems="10"
+            android:id="@+id/txtName"
+            android:layout_gravity="center"/>
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Done"
+            android:id="@+id/btnDone"
             android:layout_gravity="center"/>
 
 </LinearLayout>

@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.thebobs.mapcrunch"
-    android:versionCode="11"
-    android:versionName="11.0" >
+          package="com.thebobs.mapcrunch"
+          android:versionCode="11"
+          android:versionName="11.0" >
     <uses-feature
             android:glEsVersion="0x00020000"
             android:required="true"/>
 
     <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="17" />
+            android:minSdkVersion="11"
+            android:targetSdkVersion="17" />
 
     <application
-        android:allowBackup="true"
-        android:icon="@drawable/logo"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+            android:allowBackup="true"
+            android:icon="@drawable/logo"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme" >
         <uses-library android:name="com.google.android.maps" />
 
         <meta-data android:name="android.app.default_searchable" android:value=".DesActivity" />
-<meta-data
-    android:name="com.google.android.gms.version"
-    android:value="4030500"/>
+        <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="4030500"/>
         <activity
-            android:name="com.thebobs.mapcrunch.MainActivity"
-            android:label="@string/app_name" >
+                android:name="com.thebobs.mapcrunch.MainActivity"
+                android:label="@string/app_name" >
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,9 +37,9 @@
         <activity android:name="com.thebobs.mapcrunch.RankingsActivity" />
         <activity android:name="com.thebobs.mapcrunch.ModeActivity" />
         <activity
-                  android:name="com.thebobs.mapcrunch.DesActivity"
-                  android:theme="@style/AppBaseTheme"
-                  android:launchMode="singleTop">
+                android:name="com.thebobs.mapcrunch.DesActivity"
+                android:theme="@style/AppBaseTheme"
+                android:launchMode="singleTop">
 
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -49,15 +49,15 @@
 
             <!-- Points to searchable meta data -->
             <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+                       android:resource="@xml/searchable"/>
             <!-- Points to searchable activity -->
 
 
         </activity>
         <activity
-            android:name="com.thebobs.mapcrunch.DesActivity2"
-            android:theme="@style/AppBaseTheme"
-            android:launchMode="singleTop">
+                android:name="com.thebobs.mapcrunch.DesActivity2"
+                android:theme="@style/AppBaseTheme"
+                android:launchMode="singleTop">
 
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
@@ -67,47 +67,47 @@
 
             <!-- Points to searchable meta data -->
             <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+                       android:resource="@xml/searchable"/>
             <!-- Points to searchable activity -->
 
 
         </activity>
         <activity
-            android:name="com.thebobs.mapcrunch.ScorePromptActivity"
-            android:label="@string/title_activity_score_prompt" >
+                android:name="com.thebobs.mapcrunch.ScorePromptActivity"
+                android:label="@string/title_activity_score_prompt" >
         </activity>
         <activity android:name=".GameActivity"/>
         <activity android:name=".GameFinishActivity"/>
 
 
         <provider
-            android:name=".PlaceProvider"
-            android:authorities="com.thebobs.mapcrunch.PlaceProvider"
-            android:exported="false" />
+                android:name=".PlaceProvider"
+                android:authorities="com.thebobs.mapcrunch.PlaceProvider"
+                android:exported="false" />
 
-<meta-data
-    android:name="com.google.android.maps.v2.API_KEY"
-    android:value="AIzaSyDsmaWRCh3f8GzofR4rZyfjgNvJKjRmeYY"/>
+        <meta-data
+                android:name="com.google.android.maps.v2.API_KEY"
+                android:value="AIzaSyDsmaWRCh3f8GzofR4rZyfjgNvJKjRmeYY"/>
 
     </application>
     <permission
-        android:name="com.thebobs.mapcrunch"
-        android:protectionLevel="signature" />
-        <uses-permission android:name="com.thebobs.mapcrunch.permission.MAPS_RECEIVE" />
+            android:name="com.thebobs.mapcrunch"
+            android:protectionLevel="signature" />
+    <uses-permission android:name="com.thebobs.mapcrunch.permission.MAPS_RECEIVE" />
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
-     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
 
 
 

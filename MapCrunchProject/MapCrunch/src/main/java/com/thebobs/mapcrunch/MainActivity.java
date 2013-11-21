@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
         final Button btnStart = (Button) findViewById(R.id.btnStart);
         final Button btnSettings = (Button) findViewById(R.id.btnSettings);
         final Button btnRankings = (Button) findViewById(R.id.btnRankings);
-        final Button btnGameTest = (Button) findViewById(R.id.btnGameTest);
         final Button btnInser = (Button) findViewById(R.id.btnInser);
 
         btnStart.setTypeface(tfNevis);

@@ -28,7 +28,6 @@ public class MainActivity extends Activity {
         final Button btnStart = (Button) findViewById(R.id.btnStart);
         final Button btnSettings = (Button) findViewById(R.id.btnSettings);
         final Button btnRankings = (Button) findViewById(R.id.btnRankings);
-        final Button btnGameTest = (Button) findViewById(R.id.btnGameTest);
         final Button btnInser = (Button) findViewById(R.id.btnInser);
 
         btnStart.setTypeface(tfNevis);
@@ -63,17 +62,6 @@ public class MainActivity extends Activity {
             }
         });
 
-        btnGameTest.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
-                Intent intMode = new Intent(MainActivity.this, GameActivity.class);
-                intMode.putExtra("latStart", 42.345573);
-                intMode.putExtra("longStart", -71.098326);
-                intMode.putExtra("latEnd", 42.345032);
-                intMode.putExtra("longEnd", -71.098053);
-                intMode.putExtra("timeLimit", 100);
-                MainActivity.this.startActivity(intMode);
-            }
-        });
     }
 
     @Override

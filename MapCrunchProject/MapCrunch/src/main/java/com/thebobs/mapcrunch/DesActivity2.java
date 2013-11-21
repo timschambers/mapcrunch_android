@@ -1,42 +1,42 @@
 
 
-        package com.thebobs.mapcrunch;
+package com.thebobs.mapcrunch;
 
-        import android.app.AlertDialog;
-        import android.app.SearchManager;
-        import android.content.Context;
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.database.Cursor;
-        import android.location.Location;
-        import android.os.Bundle;
-        import android.support.v4.app.LoaderManager.LoaderCallbacks;
-        import android.support.v4.content.CursorLoader;
-        import android.support.v4.view.MenuItemCompat;
-        import android.support.v7.app.ActionBarActivity;
-        import android.support.v7.widget.SearchView;
-        import android.text.InputType;
-        import android.view.LayoutInflater;
-        import android.view.Menu;
-        import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.EditText;
+import android.app.AlertDialog;
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.database.Cursor;
+import android.location.Location;
+import android.os.Bundle;
+import android.support.v4.app.LoaderManager.LoaderCallbacks;
+import android.support.v4.content.CursorLoader;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.SearchView;
+import android.text.InputType;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 
-        import com.google.android.gms.common.ConnectionResult;
-        import com.google.android.gms.common.GooglePlayServicesClient;
-        import com.google.android.gms.location.LocationClient;
-        import com.google.android.gms.maps.CameraUpdate;
-        import com.google.android.gms.maps.CameraUpdateFactory;
-        import com.google.android.gms.maps.GoogleMap;
-        import com.google.android.gms.maps.SupportMapFragment;
-        import com.google.android.gms.maps.model.LatLng;
-        import com.google.android.gms.maps.model.Marker;
-        import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesClient;
+import com.google.android.gms.location.LocationClient;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
+import com.google.android.gms.maps.model.MarkerOptions;
 
-        import java.util.Random;
+import java.util.Random;
 
 
-        public class DesActivity2 extends ActionBarActivity implements LoaderCallbacks<Cursor>, GoogleMap.OnMarkerClickListener, GooglePlayServicesClient.ConnectionCallbacks,
+public class DesActivity2 extends ActionBarActivity implements LoaderCallbacks<Cursor>, GoogleMap.OnMarkerClickListener, GooglePlayServicesClient.ConnectionCallbacks,
         GooglePlayServicesClient.OnConnectionFailedListener {
 
     GoogleMap mGoogleMap;
@@ -44,7 +44,7 @@
     Location mCurrentLocation;
     LocationClient mLocationClient;
     final Context context = this;
-     EditText userInput = null;
+    EditText userInput = null;
     EditText userInput2 = null;
 
     double lat = 0;
@@ -56,11 +56,11 @@
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_des2);
-System.out.print("here??%%KJHKJ%HJ%J%");
+        System.out.print("here??%%KJHKJ%HJ%J%");
         SupportMapFragment fragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map2);
 
         mGoogleMap = fragment.getMap();
-         mLocationClient = new LocationClient(this, this, this);
+        mLocationClient = new LocationClient(this, this, this);
         mLocationClient.connect();
 
 
@@ -173,10 +173,10 @@ System.out.print("here??%%KJHKJ%HJ%J%");
 
         // set prompts.xml to alertdialog builder
         alertDialogBuilder.setView(promptsView).setPositiveButton("Yes", dialogClickListener).setNegativeButton("No", dialogClickListener).show();
-             // AlertDialog.Builder builder = new AlertDialog.Builder(this);
-       // builder.setMessage("Enter Radius from Start")
+        // AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        // builder.setMessage("Enter Radius from Start")
 
-         return true;
+        return true;
     }
 
     DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
@@ -186,7 +186,7 @@ System.out.print("here??%%KJHKJ%HJ%J%");
                 case DialogInterface.BUTTON_POSITIVE:
                     try
                     {
-                       //System.out.println(userInput.getText() + "   " + userInput2.getText());
+                        //System.out.println(userInput.getText() + "   " + userInput2.getText());
 
 
 
@@ -198,7 +198,7 @@ System.out.print("here??%%KJHKJ%HJ%J%");
                     }catch(Exception e){
 
                     }
-                                        break;
+                    break;
 
                 case DialogInterface.BUTTON_NEGATIVE:
                     mGoogleMap.clear();
